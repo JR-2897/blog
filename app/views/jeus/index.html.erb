@@ -1,0 +1,16 @@
+<h1>Voici notre catalogue de jeux :</h1>
+
+<ul>
+  <% @jeus.each do |jeu| %>
+    <li>
+      <%= jeu.title %>
+      <%= link_to 'Show', jeu_path(jeu) %>
+      <%= link_to 'Edit', edit_jeu_path(jeu) %>
+      <%= link_to 'Supprimer', jeu_path(jeu), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  <%= link_to "Nouveau jeu" ,'/jeus/new' %>
+</p>
