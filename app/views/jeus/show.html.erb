@@ -1,0 +1,24 @@
+<h1>
+  <strong>Nom du jeu :</strong>
+  <%= @jeu.title %>
+</h1>
+
+<p>
+  <%= @jeu.description %>
+</p>
+
+<p>
+  <%= @jeu.price %>
+</p>
+
+<p>
+  <%= link_to "Nouveau jeu" ,'/jeus/new' %>
+</p>
+
+<p>
+  <%= link_to "Retour accueil" ,'/' %>
+</p>
+
+<p>
+  <%= link_to "Modifié le jeu", edit_jeu_path(jeu) %>
+</p>

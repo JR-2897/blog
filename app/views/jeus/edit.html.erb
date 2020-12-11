@@ -1,0 +1,37 @@
+<h1>Modification jeu <%= @jeu.title %></h1>
+
+<%= simple_form_for @jeu do |f| %>
+
+  <% if @jeu.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@jeu.errors.count, "error") %> prohibited
+        Le jeu n'a pas été modifié :
+      </h2>
+      <ul>
+        <% @jeu.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.text_area :description, size: "50x5" %>
+  </p>
+
+  <p>
+    <%= f.number_field :price, step: 0.01 %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+
+<%= link_to "Retour accueil" ,'/' %>

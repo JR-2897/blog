@@ -1,0 +1,12 @@
+<h1>Formulaire ajout jeu</h1>
+
+<%= simple_form_for @jeu do |i| %>
+  <p><%= i.input :title %></p>
+  <p><%= i.text_area :description, size: "50x5" %></p>
+  <p><%= i.number_field :price, step: 0.01 %></p>
+  <p><%= i.submit %></p>
+<% end %>
+
+<p>
+  <%= link_to "Retour accueil" ,'/' %>
+</p>
